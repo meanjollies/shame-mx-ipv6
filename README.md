@@ -11,10 +11,10 @@ Prior to running, make sure the *domains_file* and *blacklist* parameters are co
 The *blacklist* array can be used to exclude domains that should not be checked.
 
 ### Todo
-* Provide the ability to pass in parameters to the script directly
-* Perform overhaul of script to use classes
+* Provide the ability to pass in parameters directly
+* Refactor to using classes, since this was originally written in a rush
 * Provide a brief report, such as the number of domains checked, and a percentage of those that support IPv6
-* Error checking
+* Proper error handling
 * Explore other ways of displaying the results
 
 License
