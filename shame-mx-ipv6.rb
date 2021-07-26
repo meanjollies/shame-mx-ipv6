@@ -4,13 +4,26 @@
 # author: andrew o'neill
 # date:   2016
 
-require 'csv'
-require 'resolv'
 require 'terminal-table'
 require 'colorize'
+require 'optparse'
+require 'resolv'
+require 'csv'
 
-domains_file = ''
-blacklist = ['example.com']
+options = { csv: '', bl: '' }
+OptionParser.new do |opts|
+  opts.on("-c=s", "--csv", "Pass in CSV filename") do |csv|
+    options[:csv] = csv
+  end
+  opts.on("-b=s", "--blacklist", Array, "Pass in blacklist, comma delimited") do |bl|
+    options[:bl] = bl
+  end
+end.parse!
+
+raise "Pass in CSV filename" if options[:csv].length == 0
+
+domains_file = options[:csv]
+blacklist = options[:bl]
 
 # read in the CSV of domains for checking, and strip the header
 domains = CSV.read(domains_file)
