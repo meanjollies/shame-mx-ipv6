@@ -6,7 +6,7 @@ shame-mx-ipv6 is a Ruby script that checks a list of domains to see if their MX 
 `$ ./shame-mx-ipv6.rb -c domains.csv [-b domain1.com,domain2.com]`
 
 ### Configuration
-When running, pass in the CSV file containing the domains you want to check via the `-c` or `--csv' parameter.
+When running, pass in the CSV file containing the domains you want to check via the `-c` or `--csv` parameter.
 
 The optional `blacklist` parameter can be used to exclude domains that should not be checked.
 
